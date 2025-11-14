@@ -15,3 +15,4 @@ bootstrap();
 // nest new messages
 // nest generate module messages
 // nest generate controller messages/messages --flat
+// npm install @nestjs/typeorm typeorm sqlite3

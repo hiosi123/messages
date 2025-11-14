@@ -1,21 +1,31 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, NotFoundException } from '@nestjs/common';
+import { CreateMessageDto } from './dtos/create-message.dto';
+import { MessagesService } from './messages.service';
 
+// classes should not create instances of dependency own its own
 @Controller('messages')
 export class MessagesController {
+    constructor(public messageService: MessagesService) {
+    }
+
     @Get()
     listMessages() {
-        return "hi"
+        return this.messageService.findAll();
     }
 
     @Post()
-    createMessages(){
-
+    createMessages(@Body() body: CreateMessageDto){
+        return this.messageService.create(body.content);
     }
 
     @Get('/:id')
-    getMessage(){
+    async getMessage(@Param('id') id: string){
+        const message = await this.messageService.findOne(id);
+        
+        if (!message) {
+            throw new NotFoundException('message not found');
+        }
 
+        return message;
     }
-
-
 }
