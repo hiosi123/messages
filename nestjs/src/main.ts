@@ -16,3 +16,5 @@ bootstrap();
 // nest generate module messages
 // nest generate controller messages/messages --flat
 // npm install @nestjs/typeorm typeorm sqlite3
+// npm install @nestjs/config
+// npm install cross-env

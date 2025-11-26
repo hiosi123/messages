@@ -1,5 +1,7 @@
-import { AfterInsert, AfterRemove, AfterUpdate, Entity, Column, PrimaryGeneratedColumn} from 'typeorm'
+import { AfterInsert, AfterRemove, AfterUpdate, Entity, Column, PrimaryGeneratedColumn, OneToMany} from 'typeorm'
 import {Exclude} from 'class-transformer'
+import { Report } from 'src/reports/report.entity'
+
 
 @Entity()
 export class User {
@@ -11,6 +13,11 @@ export class User {
 
     @Column()
     password: string
+
+    // function is to solve circular dependency issue
+    // 
+    @OneToMany(() => Report, (report) => report.user)
+    reports: Report[];
 
     @AfterInsert()
     logInsert() {

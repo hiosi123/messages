@@ -14,7 +14,7 @@ export class AuthService {
         const users = await this.usersService.find(email)
         console.log(users)
         if (users.length) {  
-            throw new BadRequestException('email in use')
+            throw new BadRequestException("email in use")
         }
         // hash the users password
         // generate a salt
