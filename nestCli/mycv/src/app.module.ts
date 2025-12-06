@@ -26,7 +26,7 @@ import cookieSession from 'cookie-session';
           entities: [User, Report]
          }
       }
-    }), // check
+    }), // check2
     // TypeOrmModule.forRoot({
     //   type: 'sqlite',
     //   database: process.env.NODE_ENV === 'test' ? 'test.sqlite' : 'db.sqlite',
