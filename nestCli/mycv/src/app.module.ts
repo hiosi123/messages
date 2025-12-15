@@ -42,7 +42,7 @@ import cookieSession from 'cookie-session';
     {
       provide: APP_PIPE,
       useValue: new ValidationPipe({
-        whitelist: true, //Only the validated fields in emtity will be go throguh, for security concern
+        whitelist: true, //Only the validated fields in entity will be go throguh, for security concern
       })
     }
   ],

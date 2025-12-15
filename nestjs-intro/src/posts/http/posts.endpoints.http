@@ -1,0 +1,49 @@
+###
+GET http://localhost:3000/posts/1234
+
+###
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "title": "myname",
+    "postType": "post",
+    "slug": "02",
+    "status": "draft",
+    "content": "hello",
+    "schema": "hi",
+    "publishOn": "2025-12-11",
+    "tags": ["hi"],
+    "metaOptions": [{"what": 2}]   
+}
+
+###
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "title": "What's new with NestJS",
+    "postType": "pot",
+    "slug": "new-with-nestjs",
+    "status": "draft",
+    "content": "test content",
+    "schema": "{\r\n    \"@context\": \"https:\/\/schema.org\",\r\n    \"@type\": \"Person\"\r\n  }",
+    "featuredImageUrl": "http://localhost.com/images/image1.jpg",
+    "publishOn": "2024-03-16T10:30:00",
+    "tags": ["nestjs", "typescript"],
+    "metaOptions": [
+        {
+            "key": "testKey",
+            "value": 20
+        }
+    ]
+}
+
+###
+PATCH http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "id": 234,
+    "postType": "wqe"
+}

@@ -1,0 +1,23 @@
+###
+GET http://localhost:3000/users/123
+?limit=10
+&page=1
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "johnd@oe.com",
+    "password": "password123"
+}
+###
+PATCH http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "email": "johndoe.com",
+    "password": "password123"
+}
