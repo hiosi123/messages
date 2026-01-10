@@ -1,0 +1,15 @@
+POST http://localhost:3000/tags
+Content-Type: application/json
+
+{
+    "name": "typescript",
+    "slug": "typescript",
+    "description": "All posts typescript"
+}
+
+###
+DELETE http://localhost:3000/tags?id=2
+
+###
+DELETE http://localhost:3000/tags/soft-delete?id=3
+

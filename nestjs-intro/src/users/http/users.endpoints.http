@@ -10,7 +10,7 @@ Content-Type: application/json
 {
     "firstName": "John",
     "lastName": "Doe",
-    "email": "johnd@oe.com",
+    "email": "johnd16@oe.com",
     "password": "password123"
 }
 ###
@@ -21,3 +21,33 @@ Content-Type: application/json
     "email": "johndoe.com",
     "password": "password123"
 }
+
+
+###
+POST http://localhost:3000/users/create-many
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE5LCJlbWFpbCI6ImpvaG5kMTVAb2UuY29tIiwiaWF0IjoxNzY3MTQ0MDU1LCJleHAiOjE3NjcxNDc2NTUsImF1ZCI6ImxvY2FsaG9zdDozMDAwIiwiaXNzIjoibG9jYWxob3N0OjMwMDAifQ.7QnCR4NwgXH1FDBc1bv_Ax6n8MTTZyOkPExEFuFAolU
+
+{
+    "users": [
+        {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "test10@gmail.com",
+            "password": "password123"
+        },
+        {
+            "firstName": "Sam",
+            "lastName": "Doe",
+            "email": "test11@gmail.com",
+            "password": "password123"
+        },
+        {
+            "firstName": "Mark",
+            "lastName": "Doe",
+            "email": "test12@gmail.com",
+            "password": "password123"
+        }
+    ]
+}
+

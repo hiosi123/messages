@@ -1,5 +1,16 @@
+{{
+    // pre request scripts
+    const date = new Date()
+    exports.startDate = date.toString()
+    exports.endDate = date.toString()
+}}
+
 ###
-GET http://localhost:3000/posts/1234
+GET http://localhost:3000/posts
+    ?startDate={{startDate}}
+    &endDate={{endDate}}
+    &limit=1
+    &page=3
 
 ###
 POST http://localhost:3000/posts
@@ -23,20 +34,19 @@ Content-Type: application/json
 
 {
     "title": "What's new with NestJS",
-    "postType": "pot",
-    "slug": "new-with-nestjs",
+    "postType": "post",
+    "slug": "new-with-nestjs-6",
     "status": "draft",
     "content": "test content",
     "schema": "{\r\n    \"@context\": \"https:\/\/schema.org\",\r\n    \"@type\": \"Person\"\r\n  }",
     "featuredImageUrl": "http://localhost.com/images/image1.jpg",
     "publishOn": "2024-03-16T10:30:00",
     "tags": ["nestjs", "typescript"],
-    "metaOptions": [
-        {
-            "key": "testKey",
-            "value": 20
-        }
-    ]
+    "metaOptions": {
+        "metaValue": { "sideBarEnabled": true, "footerActive": true }
+    },
+    "authorId": 1,
+    "tags": [1,2]
 }
 
 ###
@@ -44,6 +54,16 @@ PATCH http://localhost:3000/posts
 Content-Type: application/json
 
 {
-    "id": 234,
-    "postType": "wqe"
+    "id": 13,
+    "title": "what's new with nestjs",
+    "postType": "post",
+    "status": "draft",
+    "content": "test content",
+    "metaOptions": {
+        "metaValue": { "sideBarEnabled": true, "footerActive": false }
+    },
+    "tags": [1,3]
 }
+
+###
+DELETE http://localhost:3000/posts?id=10

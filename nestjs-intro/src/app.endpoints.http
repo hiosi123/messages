@@ -1,2 +1,7 @@
 ### Get Request for app controller
-GET http://localhost:3000/
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    
+}
